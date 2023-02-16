@@ -25,7 +25,7 @@ module.exports = {
     },
     namespace:{
       type: 'string',
-      message: 'sdk namespace?'
+      message: 'Sdk namespace?'
     }
   },
   filters: {},
