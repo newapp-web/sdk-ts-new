@@ -6,7 +6,7 @@ import { defineConfig } from 'rollup';
 
 const publicConfig = {
   format: 'umd',
-  name: 'dFile',
+  name: '{{namespace}}',
   globals: {
     eventemitter3: 'eventemitter3',
   },
