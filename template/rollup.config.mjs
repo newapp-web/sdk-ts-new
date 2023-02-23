@@ -2,13 +2,15 @@ import terser from '@rollup/plugin-terser';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
+import bundleSize from 'rollup-plugin-bundle-size';
 import { defineConfig } from 'rollup';
 
 const publicConfig = {
   format: 'umd',
-  name: '{{namespace}}',
+  name: '{{namespce}}',
   globals: {
     eventemitter3: 'eventemitter3',
+    'crypto-js': 'CryptoJS',
   },
 };
 
@@ -23,10 +25,30 @@ const config = defineConfig([
       {
         file: 'lib/index.min.js',
         ...publicConfig,
-        plugins: [terser()],
+        plugins: [
+          terser({
+            compress: {
+              drop_console: true,
+            },
+          }),
+        ],
       },
     ],
-    plugins: [babel(), nodeResolve(), commonjs()],
+    plugins: [
+      babel({
+        babelHelpers: 'bundled',
+      }),
+      commonjs({
+        include: /node_modules/,
+      }),
+      nodeResolve({
+        customResolveOptions: {
+          moduleDirectories: ['node_modules'],
+        },
+      }),
+      bundleSize(),
+      // typescript(),
+    ],
   },
   {
     input: 'src/index.js',
@@ -35,9 +57,24 @@ const config = defineConfig([
       format: 'esm',
       globals: {
         eventemitter3: 'eventemitter3',
+        'crypto-js': 'CryptoJS',
       },
     },
-    plugins: [babel(), nodeResolve(), commonjs()],
+    plugins: [
+      babel({
+        babelHelpers: 'bundled',
+      }),
+      nodeResolve({
+        customResolveOptions: {
+          moduleDirectories: ['node_modules'],
+        },
+      }),
+      commonjs({
+        include: /node_modules/,
+      }),
+      bundleSize(),
+      // typescript(),
+    ],
   },
 ]);
 
