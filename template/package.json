@@ -67,20 +67,6 @@
     "**/*.{json,md}": [
       "prettier --write",
       "git add"
-    ],
-    "**/**/*.{vue,html,js,mjs,jsx,ts,tsx}": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
-    ],
-    "**/**/*.{vue,html,css,scss}": [
-      "prettier --write",
-      "stylelint --fix",
-      "git add"
-    ],
-    "**/**/*.{json,md}": [
-      "prettier --write",
-      "git add"
     ]
   }
 }
