@@ -1,5 +1,5 @@
 {
-  "name": "workflow-cli-template-sdk-rollup",
+  "name": "workflow-cli-template-sdk",
   "version": "1.0.0",
   "license": "MIT",
   "description": "Rollup打包的JS SDK模版",
