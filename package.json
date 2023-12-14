@@ -1,11 +1,6 @@
 {
-  "name": "workflow-cli-template-sdk",
+  "name": "newapp-cli-template-sdk-ts",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "Rollup打包的JS SDK模版",
-  "scripts": {
-  },
-  "devDependencies": {
-    "workflow-cli": "^1.0.5"
-  }
+  "description": "TS SDK模版-Rollup"
 }
