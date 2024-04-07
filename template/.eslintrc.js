@@ -7,7 +7,7 @@ module.exports = {
     amd: true,
   },
   parserOptions: {
-    parser: '@babel/eslint-parser',
+    parser: '@typescript-eslint/parser',
     requireConfigFile: false,
     ecmaVersion: 2018,
     ecmaFeatures: {
@@ -16,15 +16,20 @@ module.exports = {
     sourceType: 'module',
   },
 
-  extends: ['eslint:recommended', 'plugin:vue/essential', 'plugin:prettier/recommended', 'eslint-config-prettier'],
-  plugins: ['html'],
+  extends: [
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'eslint-config-prettier',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  plugins: ['@typescript-eslint'],
   rules: {
     quotes: [2, 'single'],
     'prettier/prettier': [
       'error',
       {
         singleQuote: true,
-        parser: 'flow',
       },
     ],
     'no-unused-vars': 'off',
