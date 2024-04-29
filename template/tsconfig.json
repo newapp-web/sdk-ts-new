@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2015",
+    "downlevelIteration": true,
     "module": "ES2015",
     "declaration": true,
     "emitDeclarationOnly": true,
@@ -9,8 +10,10 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports":true,
     "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false,
     "strict": true,
     "skipLibCheck": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "sourceMap": true
   }
 }

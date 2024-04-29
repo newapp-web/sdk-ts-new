@@ -7,7 +7,7 @@ import typescript from '@rollup/plugin-typescript';
 import { defineConfig } from 'rollup';
 const globalsConfig = {
   eventemitter3: 'eventemitter3',
-  lodash: 'lodash'
+  lodash: 'lodash',
 };
 const outputFileName = 'index';
 const outputDir = 'lib';
